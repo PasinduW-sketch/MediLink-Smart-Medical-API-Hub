@@ -1,4 +1,4 @@
-/* Reset some default styles */
+
 *,
 *::before,
 *::after {
@@ -87,10 +87,17 @@ body {
   align-self: flex-start;
   box-shadow: 0 6px 10px rgba(0, 188, 212, 0.5);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
 }
 
-.btn:hover,
-.btn:focus {
+.btn:disabled {
+  background-color: #609ba0;
+  cursor: wait;
+  box-shadow: none;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus-visible:not(:disabled) {
   background-color: #0097a7;
   box-shadow: 0 8px 14px rgba(0, 151, 167, 0.7);
   outline: none;
@@ -109,6 +116,44 @@ body {
   white-space: pre-wrap;
   word-wrap: break-word;
   user-select: text;
+  min-height: 120px;
+}
+
+
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(150%);
+  background-color: #323232;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.toast.info {
+  background-color: #2196f3;
+}
+
+.toast.success {
+  background-color: #4caf50;
+}
+
+.toast.error {
+  background-color: #f44336;
 }
 
 .footer {
@@ -116,4 +161,16 @@ body {
   font-size: 0.9rem;
   color: #607d8b;
   text-align: center;
+  user-select: none;
 }
+
+
+@media (max-width: 480px) {
+  .service-card {
+    padding: 1.5rem 1rem 2rem;
+  }
+  .service-title {
+    font-size: 1.4rem;
+  }
+}
+
