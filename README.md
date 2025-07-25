@@ -25,11 +25,18 @@ MediLink integrates these services into a unified API hub using **Ballerina**, s
 ## 📁 Project Structure
 
 ```bash
-ballerina/
-├── main.bal                 # Entry point
-├── services/                # Microservices for domains
-│   ├── patient_service.bal
-│   ├── lab_service.bal
-│   └── pharmacy_service.bal
-└── utils/
-    └── logger.bal
+medilink-api-hub/
+├── ballerina/
+│   ├── main.bal
+│   ├── services/
+│   │   ├── patient_service.bal
+│   │   ├── lab_service.bal
+│   │   └── pharmacy_service.bal
+│   └── utils/
+│       └── logger.bal
+├── docs/
+│   └── architecture-diagram.pdf    
+├── README.md
+├── LICENSE
+└── .gitignore
+
