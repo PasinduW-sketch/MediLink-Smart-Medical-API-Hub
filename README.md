@@ -1,7 +1,4 @@
 # MediLink-Smart-Medical-API-Hub
-
-# MediLink – Smart Medical API Hub
-
 An intelligent healthcare middleware that integrates multiple medical services into one unified, Ballerina-powered API platform.
 
 ## 🧩 Key Features
