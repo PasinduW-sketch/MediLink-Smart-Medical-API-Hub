@@ -1,0 +1,20 @@
+# Ballerina build
+target/
+
+# Ballerina log files
+ballerina-internal.log
+ballerina.log
+
+# IDE settings
+.idea/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Dependency caches
+.ballerina/
+
+# Node / npm (if frontend included)
+node_modules/
