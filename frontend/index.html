@@ -20,35 +20,74 @@
     <section aria-labelledby="patient-service-title" class="service-card">
       <h2 id="patient-service-title" class="service-title">🩺 Patient Service</h2>
       <p class="service-desc">Retrieve and manage patient information effortlessly.</p>
-      <button class="btn" id="btn-patient">Fetch Patients</button>
+      <button class="btn" id="btn-patient" aria-live="polite" aria-busy="false">Fetch Patients</button>
       <pre class="result" id="patientResult" aria-live="polite"></pre>
     </section>
 
     <section aria-labelledby="lab-service-title" class="service-card">
       <h2 id="lab-service-title" class="service-title">🧪 Lab Service</h2>
       <p class="service-desc">Access real-time lab reports and statuses.</p>
-      <button class="btn" id="btn-lab">Fetch Lab Reports</button>
+      <button class="btn" id="btn-lab" aria-live="polite" aria-busy="false">Fetch Lab Reports</button>
       <pre class="result" id="labResult" aria-live="polite"></pre>
     </section>
 
     <section aria-labelledby="pharmacy-service-title" class="service-card">
       <h2 id="pharmacy-service-title" class="service-title">💊 Pharmacy Service</h2>
       <p class="service-desc">Check medicine availability and stock levels.</p>
-      <button class="btn" id="btn-pharmacy">Fetch Medicines</button>
+      <button class="btn" id="btn-pharmacy" aria-live="polite" aria-busy="false">Fetch Medicines</button>
       <pre class="result" id="pharmacyResult" aria-live="polite"></pre>
     </section>
   </main>
+
+  <div id="toast" role="alert" aria-live="assertive" aria-atomic="true" class="toast"></div>
 
   <footer class="footer">
     <p>© 2025 MediLink Team. Powered by Ballerina Runtime.</p>
   </footer>
 
   <script>
-    async function fetchData(url, outputId) {
+    const toast = document.getElementById('toast');
+
+    function showToast(message, type = 'info') {
+      toast.textContent = message;
+      toast.className = 'toast show ' + type;
+      setTimeout(() => {
+        toast.className = 'toast';
+      }, 4000);
+    }
+
+    async function fetchData(url, outputId, btn) {
       const output = document.getElementById(outputId);
-      output.textContent = "Loading...";
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
+      output.textContent = '';
+      showToast('Loading data...', 'info');
       try {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
         const data = await response.json();
-        output.textContent = JSON.str
+        output.textContent = JSON.stringify(data, null, 2);
+        showToast('Data loaded successfully!', 'success');
+      } catch (error) {
+        output.textContent = error.message;
+        showToast(error.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.setAttribute('aria-busy', 'false');
+      }
+    }
+
+    document.getElementById('btn-patient').addEventListener('click', function() {
+      fetchData('http://localhost:9091/patients/getAll', 'patientResult', this);
+    });
+
+    document.getElementById('btn-lab').addEventListener('click', function() {
+      fetchData('http://localhost:9092/labs/reports', 'labResult', this);
+    });
+
+    document.getElementById('btn-pharmacy').addEventListener('click', function() {
+      fetchData('http://localhost:9093/pharmacy/medicines', 'pharmacyResult', this);
+    });
+  </script>
+</body>
+</html>
