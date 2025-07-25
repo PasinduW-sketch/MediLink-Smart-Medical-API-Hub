@@ -17,7 +17,7 @@ An intelligent healthcare middleware that integrates multiple medical services i
 ## 🔧 Setup Instructions
 
 ```bash
-git clone https://github.com/[your-team]/medilink-api-hub.git
+git clone https://github.com/CodePanthers/medilink-api-hub.git
 cd medilink-api-hub/ballerina
 bal build
 bal run
