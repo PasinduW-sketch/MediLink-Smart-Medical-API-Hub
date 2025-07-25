@@ -1,24 +1,35 @@
-# MediLink-Smart-Medical-API-Hub
-An intelligent healthcare middleware that integrates multiple medical services into one unified, Ballerina-powered API platform.
+# MediLink – Smart Medical API Hub
 
-## 🧩 Key Features
-- Real-time patient record sync between hospitals and labs
-- API gateway for pharmacy inventory and prescriptions
-- Medical appointment scheduling service
-- Lab report submission and retrieval
-- Secured using Ballerina’s JWT authentication
+MediLink is a healthcare integration platform built using **Ballerina** to streamline communication between patients, labs, and pharmacies.
 
-## 🚀 How We Used Ballerina
-- Built microservices for different domains (patients, lab, pharmacy)
-- Connected APIs using Ballerina's connectors (HTTP/REST)
-- Used Ballerina’s observability for monitoring and debugging
-- Enabled CI/CD with GitHub and Ballerina cloud
+---
 
-## 🔧 Setup Instructions
+## 🧠 Problem
+Hospitals, labs, and pharmacies often use different systems, causing delays in accessing patient data and treatment info.
+
+## 💡 Solution
+MediLink integrates these services into a unified API hub using **Ballerina**, simplifying data access and improving patient care.
+
+---
+
+## 🚀 Features
+
+- 📋 Patient record retrieval
+- 🧪 Lab report synchronization
+- 💊 Real-time pharmacy inventory
+- 🔐 Secure endpoints using JWT (future enhancement)
+- 📈 Built-in observability for debugging
+
+---
+
+## 📁 Project Structure
 
 ```bash
-git clone https://github.com/CodePanthers/medilink-api-hub.git
-cd medilink-api-hub/ballerina
-bal build
-bal run
-
+ballerina/
+├── main.bal                 # Entry point
+├── services/                # Microservices for domains
+│   ├── patient_service.bal
+│   ├── lab_service.bal
+│   └── pharmacy_service.bal
+└── utils/
+    └── logger.bal
