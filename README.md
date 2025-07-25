@@ -12,13 +12,13 @@ MediLink integrates these services into a unified API hub using **Ballerina**, s
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 📋 Patient record retrieval
-- 🧪 Lab report synchronization
-- 💊 Real-time pharmacy inventory
-- 🔐 Secure endpoints using JWT (future enhancement)
-- 📈 Built-in observability for debugging
+- Patient record retrieval
+- Lab report synchronization
+- Real-time pharmacy inventory
+- Secure endpoints using JWT (future enhancement)
+- built-in observability for debugging
 
 ---
 
