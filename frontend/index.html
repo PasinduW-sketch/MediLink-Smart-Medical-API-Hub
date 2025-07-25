@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MediLink API Hub</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">MediLink API Hub</h1>
+    <p class="tagline">Bridging healthcare services seamlessly</p>
+  </header>
+
+  <main class="container" role="main">
+    <section aria-labelledby="patient-service-title" class="service-card">
+      <h2 id="patient-service-title" class="service-title">🩺 Patient Service</h2>
+      <p class="service-desc">Retrieve and manage patient information effortlessly.</p>
+      <button class="btn" id="btn-patient">Fetch Patients</button>
+      <pre class="result" id="patientResult" aria-live="polite"></pre>
+    </section>
+
+    <section aria-labelledby="lab-service-title" class="service-card">
+      <h2 id="lab-service-title" class="service-title">🧪 Lab Service</h2>
+      <p class="service-desc">Access real-time lab reports and statuses.</p>
+      <button class="btn" id="btn-lab">Fetch Lab Reports</button>
+      <pre class="result" id="labResult" aria-live="polite"></pre>
+    </section>
+
+    <section aria-labelledby="pharmacy-service-title" class="service-card">
+      <h2 id="pharmacy-service-title" class="service-title">💊 Pharmacy Service</h2>
+      <p class="service-desc">Check medicine availability and stock levels.</p>
+      <button class="btn" id="btn-pharmacy">Fetch Medicines</button>
+      <pre class="result" id="pharmacyResult" aria-live="polite"></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 MediLink Team. Powered by Ballerina Runtime.</p>
+  </footer>
+
+  <script>
+    async function fetchData(url, outputId) {
+      const output = document.getElementById(outputId);
+      output.textContent = "Loading...";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
+        const data = await response.json();
+        output.textContent = JSON.str
