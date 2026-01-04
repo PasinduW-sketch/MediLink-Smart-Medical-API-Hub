@@ -56,15 +56,6 @@ medilink-api-hub/
 └── .gitignore                  # Git exclusion rules 
 
 
----
-##
-
-🚀 Getting Started
-Prerequisites: Install Ballerina Swan Lake.
-
-Clone: git clone https://github.com/YourUsername/medilink-api-hub.git
-
-Run: Navigate to the ballerina/ folder and execute bal run.
 
 🤝 Contributors
 Pasindu Harsha 
