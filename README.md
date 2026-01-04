@@ -35,27 +35,11 @@ MediLink solves this by integrating these disparate services into a **unified AP
 * **JSON/REST:** Standardized data formats for cross-platform compatibility.
 * **JWT (Future):** Planned for enterprise-grade security and authentication.
 
----
 
-##🚀 Getting Started
-Prerequisites: Install Ballerina Swan Lake.
-
-Clone: git clone https://github.com/YourUsername/medilink-api-hub.git
-
-Run: Navigate to the ballerina/ folder and execute bal run.
-
-##🤝 Contributors
-Pasindu Harsha — Project Lead
-
-Team MedX Hackers
-
-##📜 License
-This project is licensed under the MIT License — see the LICENSE file for details.
-
-Developed with ❤️ by Pasindu Harsha Connecting healthcare systems through intelligent integration.
 
 ## 📁 Project Structure
-```bash
+```
+bash
 medilink-api-hub/
 ├── ballerina/
 │   ├── main.bal                # Entry point for the API Hub
@@ -70,5 +54,24 @@ medilink-api-hub/
 ├── README.md                   # Project documentation
 ├── LICENSE                     # MIT License
 └── .gitignore                  # Git exclusion rules 
+
+
+---
+##
+
+🚀 Getting Started
+Prerequisites: Install Ballerina Swan Lake.
+
+Clone: git clone https://github.com/YourUsername/medilink-api-hub.git
+
+Run: Navigate to the ballerina/ folder and execute bal run.
+
+🤝 Contributors
+Pasindu Harsha 
+
+📜 License
+This project is licensed under the MIT License — see the LICENSE file for details.
+
+Developed with ❤️ by Pasindu Harsha Connecting healthcare systems through intelligent integration.
 
 
