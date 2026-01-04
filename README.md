@@ -37,6 +37,23 @@ MediLink solves this by integrating these disparate services into a **unified AP
 
 ---
 
+##🚀 Getting Started
+Prerequisites: Install Ballerina Swan Lake.
+
+Clone: git clone https://github.com/YourUsername/medilink-api-hub.git
+
+Run: Navigate to the ballerina/ folder and execute bal run.
+
+##🤝 Contributors
+Pasindu Harsha — Project Lead
+
+Team MedX Hackers
+
+##📜 License
+This project is licensed under the MIT License — see the LICENSE file for details.
+
+Developed with ❤️ by Pasindu Harsha Connecting healthcare systems through intelligent integration.
+
 ## 📁 Project Structure
 ```bash
 medilink-api-hub/
@@ -54,11 +71,4 @@ medilink-api-hub/
 ├── LICENSE                     # MIT License
 └── .gitignore                  # Git exclusion rules 
 
-🤝 Contributors
-Pasindu Harsha 
 
-
-📜 License
-This project is licensed under the MIT License — see the LICENSE file for details.
-
-Developed with ❤️ by Pasindu Harsha Connecting healthcare systems through intelligent integration.
