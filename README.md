@@ -52,12 +52,11 @@ medilink-api-hub/
 │   └── architecture-diagram.pdf # System design overview
 ├── README.md                   # Project documentation
 ├── LICENSE                     # MIT License
-└── .gitignore                  # Git exclusion rules
+└── .gitignore                  # Git exclusion rules 
 
 🤝 Contributors
-Pasindu Harsha — Project Lead
+Pasindu Harsha 
 
-Team MedX Hackers
 
 📜 License
 This project is licensed under the MIT License — see the LICENSE file for details.
