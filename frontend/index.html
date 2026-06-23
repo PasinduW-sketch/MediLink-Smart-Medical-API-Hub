@@ -77,17 +77,22 @@
       }
     }
 
-    document.getElementById('btn-patient').addEventListener('click', function() {
-      fetchData('http://localhost:9091/patients/getAll', 'patientResult', this);
-    });
+   // Updated to work with local development + Netlify deployment
+const API_BASE_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:9090'  // Local development
+    : 'https://your-netlify-app.netlify.app'; // Netlify production
 
-    document.getElementById('btn-lab').addEventListener('click', function() {
-      fetchData('http://localhost:9092/labs/reports', 'labResult', this);
-    });
+document.getElementById('btn-patient').addEventListener('click', function() {
+    fetchData(API_BASE_URL + '/api/hub/patients', 'patientResult', this);
+});
 
-    document.getElementById('btn-pharmacy').addEventListener('click', function() {
-      fetchData('http://localhost:9093/pharmacy/medicines', 'pharmacyResult', this);
-    });
+document.getElementById('btn-lab').addEventListener('click', function() {
+    fetchData(API_BASE_URL + '/api/hub/labs', 'labResult', this);
+});
+
+document.getElementById('btn-pharmacy').addEventListener('click', function() {
+    fetchData(API_BASE_URL + '/api/hub/pharmacy', 'pharmacyResult', this);
+});
   </script>
 </body>
 </html>
